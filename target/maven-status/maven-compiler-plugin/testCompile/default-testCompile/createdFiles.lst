@@ -1,3 +1,6 @@
-com/crossover/trial/journals/rest/EmailServiceTest.class
-com/crossover/trial/journals/rest/JournalServiceTest.class
-com/crossover/trial/journals/rest/CategoryRestServiceTest.class
+com/crossover/trial/journals/rest/controller/PublisherControllerTest.class
+com/crossover/trial/journals/rest/service/EmailServiceTest.class
+com/crossover/trial/journals/rest/controller/CategoryRestServiceTest.class
+com/crossover/trial/journals/rest/controller/JournalControllerTest.class
+com/crossover/trial/journals/rest/service/JournalServiceTest.class
+com/crossover/trial/journals/rest/controller/JournalRestServiceTest.class

@@ -1,4 +1,4 @@
-package com.crossover.trial.journals.rest;
+package com.crossover.trial.journals.rest.service;
 
 import com.crossover.trial.journals.Application;
 import com.crossover.trial.journals.model.Category;

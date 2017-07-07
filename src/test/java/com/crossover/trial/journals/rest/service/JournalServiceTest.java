@@ -1,4 +1,4 @@
-package com.crossover.trial.journals.rest;
+package com.crossover.trial.journals.rest.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -31,6 +31,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 public class JournalServiceTest {
 
 	private final static String NEW_JOURNAL_NAME = "New Journal";
+	private final static String NEW_JOURNAL_DESCRIPTION = "New Journal Description";
 
 	@Autowired
 	private JournalService journalService;
@@ -83,6 +84,7 @@ public class JournalServiceTest {
 
 		Journal journal = new Journal();
 		journal.setName("New Journal");
+		journal.setDescription(NEW_JOURNAL_DESCRIPTION);
 
 		journalService.publish(p.get(), journal, 1L);
 	}
@@ -94,6 +96,7 @@ public class JournalServiceTest {
 
 		Journal journal = new Journal();
 		journal.setName("New Journal");
+		journal.setDescription(NEW_JOURNAL_DESCRIPTION);
 
 		journalService.publish(p.get(), journal, 150L);
 	}
@@ -105,6 +108,7 @@ public class JournalServiceTest {
 
 		Journal journal = new Journal();
 		journal.setName(NEW_JOURNAL_NAME);
+		journal.setDescription(NEW_JOURNAL_DESCRIPTION);
 		journal.setUuid("SOME_EXTERNAL_ID");
 		try {
 			journalService.publish(p.get(), journal, 3L);

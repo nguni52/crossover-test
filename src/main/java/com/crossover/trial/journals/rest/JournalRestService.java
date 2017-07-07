@@ -1,12 +1,14 @@
 package com.crossover.trial.journals.rest;
 
-import java.security.Principal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
-import com.crossover.trial.journals.model.Journal;
+import com.crossover.trial.journals.dto.SubscriptionDTO;
+import com.crossover.trial.journals.model.*;
+import com.crossover.trial.journals.repository.CategoryRepository;
+import com.crossover.trial.journals.repository.PublisherRepository;
+import com.crossover.trial.journals.service.CurrentUser;
 import com.crossover.trial.journals.service.JournalService;
+import com.crossover.trial.journals.service.UserService;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -16,15 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.crossover.trial.journals.dto.SubscriptionDTO;
-import com.crossover.trial.journals.model.Category;
-import com.crossover.trial.journals.model.Publisher;
-import com.crossover.trial.journals.model.Subscription;
-import com.crossover.trial.journals.model.User;
-import com.crossover.trial.journals.repository.CategoryRepository;
-import com.crossover.trial.journals.repository.PublisherRepository;
-import com.crossover.trial.journals.service.CurrentUser;
-import com.crossover.trial.journals.service.UserService;
+import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/rest/journals")
@@ -41,10 +38,13 @@ public class JournalRestService {
 
 	@Autowired
 	private CategoryRepository categoryRepository;
+	private Log log = LogFactory.getLog(this.getClass().getName());
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ResponseEntity<Object> browse(@AuthenticationPrincipal Principal principal) {
 		CurrentUser activeUser = (CurrentUser) ((Authentication) principal).getPrincipal();
+		log.info("Active user email: " + activeUser.getUser().getEmail());
+
 		return ResponseEntity.ok(journalService.listAll(activeUser.getUser()));
 	}
 

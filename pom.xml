@@ -69,7 +69,7 @@
             <version>5.1.6</version>
             <scope>runtime</scope>
         </dependency>
-        
+
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
@@ -91,6 +91,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <version>1.5.2.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -109,22 +115,46 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.5.1</version>
+                <version>2.7</version>
                 <configuration>
                     <formats>
                         <format>xml</format>
+                        <format>html</format>
                     </formats>
+                    <instrumentation>
+                        <ignores>
+                            <ignore>com.crossover.trial.journals.config.*</ignore>
+                            <ignore>com.crossover.trial.journals.model.*</ignore>
+                            <ignore>com.crossover.trial.journals.dto.*</ignore>
+                            <ignore>com.crossover.trial.journals.repository.*</ignore>
+                        </ignores>
+                    </instrumentation>
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>cobertura</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
 
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <formats>
+                        <format>xml</format>
+                        <format>html</format>
+                    </formats>
+                    <instrumentation>
+                        <ignores>
+                            <ignore>com.crossover.trial.journals.config.*</ignore>
+                            <ignore>com.crossover.trial.journals.model.*</ignore>
+                            <ignore>com.crossover.trial.journals.dto.*</ignore>
+                            <ignore>com.crossover.trial.journals.repository.*</ignore>
+                        </ignores>
+                    </instrumentation>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>

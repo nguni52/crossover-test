@@ -1,3 +1,6 @@
-/Users/nguni52/Desktop/Journals - Crossover Java trial/Code/src/test/java/com/crossover/trial/journals/rest/CategoryRestServiceTest.java
-/Users/nguni52/Desktop/Journals - Crossover Java trial/Code/src/test/java/com/crossover/trial/journals/rest/EmailServiceTest.java
-/Users/nguni52/Desktop/Journals - Crossover Java trial/Code/src/test/java/com/crossover/trial/journals/rest/JournalServiceTest.java
+/Users/nguni52/Desktop/Journals - Crossover Java trial/Code/src/test/java/com/crossover/trial/journals/rest/controller/CategoryRestServiceTest.java
+/Users/nguni52/Desktop/Journals - Crossover Java trial/Code/src/test/java/com/crossover/trial/journals/rest/service/JournalServiceTest.java
+/Users/nguni52/Desktop/Journals - Crossover Java trial/Code/src/test/java/com/crossover/trial/journals/rest/controller/JournalControllerTest.java
+/Users/nguni52/Desktop/Journals - Crossover Java trial/Code/src/test/java/com/crossover/trial/journals/rest/controller/JournalRestServiceTest.java
+/Users/nguni52/Desktop/Journals - Crossover Java trial/Code/src/test/java/com/crossover/trial/journals/rest/controller/PublisherControllerTest.java
+/Users/nguni52/Desktop/Journals - Crossover Java trial/Code/src/test/java/com/crossover/trial/journals/rest/service/EmailServiceTest.java
