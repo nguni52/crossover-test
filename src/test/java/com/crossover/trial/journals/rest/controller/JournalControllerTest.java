@@ -60,7 +60,6 @@ public class JournalControllerTest {
         mockMvc.perform(get("/view/1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/pdf"));
-//                .andDo(print());
     }
 
     @Test(expected = NestedServletException.class)
@@ -69,6 +68,14 @@ public class JournalControllerTest {
         mockMvc.perform(get("/view/1000"))
                 .andExpect(status().isNotFound())
                 .andExpect(content().contentType("application/pdf"))
+                .andDo(print());
+    }
+
+    @Test
+    @WithUserDetails("user2")
+    public void testRenderDocumentNotSubscribed() throws Exception {
+        mockMvc.perform(get("/view/1"))
+                .andExpect(status().isNotFound())
                 .andDo(print());
     }
 }
